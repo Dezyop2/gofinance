@@ -2,16 +2,20 @@
 session_start();
 $bdd = new PDO('mysql:host=localhost;dbname=membres;charset=utf8', 'root', 'root');
 
+var_dump($_POST);
 if(isset($_POST['envoi'])){
     if(!empty($_POST['adress']) AND !empty($_POST['mdp'])){
 
         $adress = htmlspecialchars($_POST['adress']);
         $mdp = sha1($_POST['mdp']);
         $inseruser = $bdd->prepare('INSERT INTO users(adress, mdp)VALUES(?, ?)');
+        var_dump($inseruser);
         $inseruser->execute(array($adress, $mdp));
 
         $recupuser = $bdd->prepare('SELECT * FROM users WHERE adress = ? AND mdp = ?');
         $recupuser->execute(array($adress, $mdp));
+
+        var_dump($bdd->errorInfo());
 
         if($recupuser->rowCount() > 0){
             $_SESSION['adress'] = $adress;
@@ -102,24 +106,25 @@ if(isset($_POST['envoi'])){
         </div>
 
         <main  class="form-signin w-25 m-auto pt-5">
-            <form>
+            <form method="post">
                 <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <input type="email" class="form-control" id="floatingInput" name="adress" placeholder="name@example.com">
                     <label for="floatingInput">Adresse mail</label>
                 </div>
 
                 <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="mdp">
                     <label for="floatingPassword">Mot de passe</label>
                 </div>
 
                 <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="mdp">
                     <label for="floatingPassword">vérifier le mot de passe</label>
                 </div>
+                <input name="envoi" type="hidden" value="truc" />
 
                 <button class="btn btn- bg-success mt-2 d-flex m-auto" type="submit">s'inscrire</button>
-
+                
             </form>
         </main>
     </body>
