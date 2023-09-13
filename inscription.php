@@ -43,6 +43,9 @@ if(isset($_POST['envoi'])){
     </head>
 
     <body>
+        <div class="d-flex m-3">
+            <a href="Systeme de gestion comptable web.html"><button type="button" class="btn-close" aria-label="Close"></button></a>
+        </div>
 
         <main  class="form-signin w-25 m-auto">
             <form>
