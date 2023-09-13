@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html data-bs-theme="dark">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,29 +12,36 @@
         <link rel="stylesheet" href="GoFinance.css">  
         <title>GoFinance</title>
     </head>
-    <body class="p-3 mb-2 bg-black text-white" style="--bs-bg-opacity: .8;">
+    <body class="p-3 mb-2 bg-body-tertiary text-white" style="--bs-bg-opacity: .8;">
         <header>
             <nav>
-                <a href="Systeme de gestion comptable web.html" class="close"><button class="btn btn-outline-danger me-2" type="button">ANNULER</button></a>
+                <a href="account.html" class="close">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </a>
             </nav>
         </header>
 
-        <p class="text-center">Adresse mail</p>
-        <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="nom@exemple.com">
-            <label for="floatingInput">Adresse mail</label>
-        </div>         
-        
-        <p class="text-center">Creation de mot de passe</p>
-        <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPasswords" placeholder="Password">
-            <label for="floatingPassword">Mot de passe</label>
-        </div>
-        <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Vérifier le mot de passe</label>
-        </div>
+        <main  class="form-signin w-25 m-auto">
+            <form>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Adresse mail</label>
+                </div>
 
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Mot de passe</label>
+                </div>
+
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">vérifier le mot de passe</label>
+                </div>
+
+                <button class="btn btn- bg-success mt-2 d-flex m-auto" type="submit">s'inscrire</button>
+
+            </form>
+        </main>
 
     </body>
 </html>

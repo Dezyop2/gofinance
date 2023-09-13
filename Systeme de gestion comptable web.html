@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html data-bs-theme="dark">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="GoFinance.css">  
         <title>GoFinance</title>
     </head>
-    <body class="p-3 mb-2 bg-black text-white" style="--bs-bg-opacity: .8;">
+    <body class="p-3 mb-2 bg-body-tertiary text-white" style="--bs-bg-opacity: .8;">
         <header>
             <nav>
                   <img src="Plan_de_travail_2.svg" class="rounded float-end" width="5%" height="5%">
@@ -23,35 +23,50 @@
                   <a href="account.html"><button class="btn btn-sm btn-outline-secondary" type="button">Compte</button></a>
               </nav>
         </header>
-        <table class="table">
+
+        <div class="table-responsive">
+          <table class="table">
             <thead>
               <tr>
-                <th scope="col"></th>
-                <th scope="col">revenus</th>
-                <th scope="col">dépenses</th>
-                <th scope="col">bénéfices</th>
-                <th scope="col">pertes</th>
+                <th>Breakpoint</th>
+                <th>Class infix</th>
+                <th>Dimensions</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th scope="row">1</th>
-                <td>test 1</td>
-                <td>test 2</td>
-                <td>test 3</td>
-                <td>test 4</td>
+                <td>Extra small</td>
+                <td><em>None</em></td>
+                <td>&lt;576px</td>
               </tr>
               <tr>
-                <th scope="row">1</th>
-                <td>test 1</td>
-                <td>test 2</td>
-                <td>test 3</td>
-                <td>test 4</td>
+                <td>Small</td>
+                <td><code>sm</code></td>
+                <td>≥576px</td>
+              </tr>
+              <tr>
+                <td>Medium</td>
+                <td><code>md</code></td>
+                <td>≥768px</td>
+              </tr>
+              <tr>
+                <td>Large</td>
+                <td><code>lg</code></td>
+                <td>≥992px</td>
+              </tr>
+              <tr>
+                <td>Extra large</td>
+                <td><code>xl</code></td>
+                <td>≥1200px</td>
+              </tr>
+              <tr>
+                <td>Extra extra large</td>
+                <td><code>xxl</code></td>
+                <td>≥1400px</td>
               </tr>
             </tbody>
           </table>
-
-
+        </div>
 
           <a href="#" class="to-top">
             <i class="fas fa-chevron-up"></i>

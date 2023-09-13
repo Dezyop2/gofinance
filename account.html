@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html data-bs-theme="dark">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,9 +10,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <script src="https://kit.fontawesome.com/66ce4227d4.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="GoFinance.css">  
+        <script src="sgcw.js" defer></script>
         <title>GoFinance</title>
     </head>
-    <body class="p-3 mb-2 bg-black text-white" style="--bs-bg-opacity: .8;">
+    <body class="p-3 mb-2 bg-body-tertiary text-white" style="--bs-bg-opacity: .8;">
         <header>
             <nav>
                 <img src="Plan_de_travail_2.svg" class="rounded float-end" width="5%" height="5%">
@@ -23,32 +24,43 @@
                   <a href="account.html"><button class="btn btn-sm btn-outline-secondary" type="button">Compte</button></a>
               </nav>
         </header>
+     
+        <main class="form-signin w-25 m-auto">
+            <form>
+                <h1 class="h3 mb-3 fw-normal">Connexion</h1>
+            
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"name="mail">
+                    <label for="floatingInput">Adresse mail</label>
+                </div>
 
-        <h1>
-            <p class="text-center">Connexion</p>
-        </h1>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="mdp">
+                    <label for="floatingPassword">Mot de passe</label>
+                </div>
+            
+                <div class="form-check text-start my-3">
+                    <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Se souvenir de moi
+                    </label>
+                </div>
 
-        <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="nom@exemple.com">
-            <label for="floatingInput">Adresse mail</label>
-        </div>
-        <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Mot de passe</label>
-        </div>
+                <button class="btn btn- w-100 bg-success" type="submit">connexion</button>
 
-        <div class="middle-txt">
-            <p class="text-center">Vous n'avez pas de compte inscrivez-vous ici</p>
-        </div>
+                <a href="register.html">
+                    <button type="button" class="btn btn-danger mt-2 d-flex m-auto">je n'ai pas de compte</button>
+                </a>
 
-        <div class="text-center">
-            <a href="register.html"><button type="button" class="btn btn-outline-danger">Inscription</button></a>
-        </div>
+                <p class="mt-5 mb-3 text-body-secondary">© 2017-2023</p>
+
+            </form>
+        </main>
 
         <a href="#" class="to-top">
             <i class="fas fa-chevron-up"></i>
         </a>
-        <script src="sgcw.js"></script>
+
     </body>
 
 </html>

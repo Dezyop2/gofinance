@@ -36,13 +36,3 @@ nav {
     pointer-events: none;
     transition: all .4s;
 }
-
-/* texte */
-
-h1 {
-    padding-bottom: 5px;
-}
-
-.middle-txt {
-    padding-top: 20px;
-}
