@@ -44,10 +44,64 @@ if(isset($_POST['envoi'])){
 
     <body>
         <div class="d-flex m-3">
-            <a href="Systeme de gestion comptable web.html"><button type="button" class="btn-close" aria-label="Close"></button></a>
+            <button type="button" class="btn-close" aria-label="Close" data-bs-toggle="modal" data-bs-target="#exampleModal"></button>
         </div>
 
-        <main  class="form-signin w-25 m-auto">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Bonjour</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                Etes vous sur de vouloir quitter cette page ?
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">je souhaite continuer</button>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal2">quitter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel2">Bonjour</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                ETES VOUS VRAIMENT SUR DE VOULOIR QUITTER ???!!!!!
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ok je reste</button>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal3">laisser moi partir</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel3">Bonjour</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                ETES VOUS VRAIMENT SUR DE VOULOIR QUITTER ???!!!!!
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-success btn-lg" data-bs-dismiss="modal">JE SOUHAITE RESTER !</button>
+                <a href="connexion.php"><button type="button" class="btn btn-secondary">quitter</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <main  class="form-signin w-25 m-auto pt-5">
             <form>
                 <div class="form-floating mb-3">
                     <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
