@@ -17,3 +17,9 @@ window.addEventListener("scroll", () => {
     toTop.classList.remove("active");
   }
 })
+
+const refresh = document.getElementById("refresh");
+
+refresh.addEventListener("click", function () {
+    location.reload();
+});
