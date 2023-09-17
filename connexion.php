@@ -64,10 +64,10 @@ if(isset($_POST['envoi'])){
                     </label>
                 </div>
 
-                <button class="btn btn- w-100 bg-success" type="submit">connexion</button>
+                <button class="btn btn- w-100 bg-success" type="submit">Connexion</button>
 
                 <a href="inscription.php">
-                    <button type="button" class="btn btn-danger mt-2 d-flex m-auto">je n'ai pas de compte</button>
+                    <button type="button" class="btn btn-danger mt-2 d-flex m-auto">Je n'ai pas de compte</button>
                 </a>
 
                 <p class="mt-5 mb-3 text-body-secondary">© 2017-2023</p>

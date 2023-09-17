@@ -95,7 +95,7 @@ if(isset($_POST['envoi'])){
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-success btn-lg" data-bs-dismiss="modal">JE SOUHAITE RESTER !</button>
-                <a href="connexion.php"><button type="button" class="btn btn-secondary">quitter</button></a>
+                <a href="connexion.php"><button type="button" class="btn btn-sm btn-secondary">quitter</button></a>
               </div>
             </div>
           </div>
