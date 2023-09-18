@@ -3,18 +3,20 @@ session_start();
 $bdd = new PDO('mysql:host=localhost;dbname=membres;charset=utf8', 'root', 'root');
 
 if(isset($_POST['envoi'])){
-    if(!empty($_POST['adress']) AND !empty($_POST['mdp'])){
+    if(!empty($_POST['adress']) AND !empty($_POST['pseudo']) AND !empty($_POST['mdp'])){
 
         $adress = htmlspecialchars($_POST['adress']);
+        $pseudo = htmlspecialchars($_POST['pseudo']);
         $mdp = sha1($_POST['mdp']);
-        $inseruser = $bdd->prepare('INSERT INTO users(adress, mdp)VALUES(?, ?)');
-        $inseruser->execute(array($adress, $mdp));
+        $inseruser = $bdd->prepare('INSERT INTO users(adress, pseudo, mdp)VALUES(?, ?, ?)');
+        $inseruser->execute(array($adress, $pseudo, $mdp));
 
-        $recupuser = $bdd->prepare('SELECT * FROM users WHERE adress = ? AND mdp = ?');
-        $recupuser->execute(array($adress, $mdp));
+        $recupuser = $bdd->prepare('SELECT * FROM users WHERE adress = ? AND pseudo = ? AND mdp = ?');
+        $recupuser->execute(array($adress, $pseudo, $mdp));
 
         if($recupuser->rowCount() > 0){
             $_SESSION['adress'] = $adress;
+            $_SESSION['pseudo'] = $pseudo;
             $_SESSION['mdp'] = $mdp;
             $_SESSION['id'] = $recupuser->fetch()['id'];
         }
@@ -107,6 +109,11 @@ if(isset($_POST['envoi'])){
                     <input type="email" class="form-control" id="floatingInput" name="adress" placeholder="name@example.com">
                     <label for="floatingInput">Adresse mail</label>
                 </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" name="pseudo" placeholder="pseudo ( 20 carartères max )">
+                    <label for="floatingInput">Nom</label>
+                </div>                
 
                 <div class="form-floating">
                     <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="mdp">
