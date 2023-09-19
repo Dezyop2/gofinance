@@ -23,12 +23,15 @@ if (!isset($_SESSION["adress"])) {
 }
 
 $user_id = $_SESSION["adress"];
-$sql = "SELECT * FROM users WHERE adress = ? AND pseudo = ? AND mdp = ?";
-$result = $conn->query($sql);
+$sql = "SELECT pseudo FROM users WHERE adress = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
-    $pseudo = $row["nom"];
+    $pseudo = $row["pseudo"];
 } else {
     $pseudo = "Vous n'êtes pas connecté";
 }
