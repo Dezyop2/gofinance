@@ -13,6 +13,28 @@ if(isset($_POST['envoi'])){
     }
 }
 
+session_start();
+
+// Vérifiez si l'utilisateur est connecté en vérifiant la session
+if (!isset($_SESSION["adress"])) {
+    // L'utilisateur n'est pas connecté, redirigez-le vers la page de connexion
+    header("Location: connexion.php");
+    exit();
+}
+
+$user_id = $_SESSION["adress"];
+$sql = "SELECT * FROM users WHERE adress = ? AND pseudo = ? AND mdp = ?";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $pseudo = $row["nom"];
+} else {
+    $pseudo = "Vous n'êtes pas connecté";
+}
+
+$conn->close();
+
 ?>
 
 <!DOCTYPE html>
@@ -38,10 +60,12 @@ if(isset($_POST['envoi'])){
                 <a href="management.php"><button class="btn btn-sm btn-outline-secondary" type="button">Gestion</button></a>
                 <a href="review.php"><button class="btn btn-sm btn-outline-secondary" type="button">Bilan</button></a>
                 <a href="connexion.php"><button class="btn btn-sm btn-outline-secondary" type="button">Compte</button></a>
-                <div class="float-end d-flex">
-                    <p class="mb-auto">pseudo</p>
-                    <img src="Plan_de_travail_2.svg" class="rounded">
-                </div>
+                <img src="Plan_de_travail_2.svg" class="rounded float-end" width="5%">
+                <p class="float-end">
+                    <?php
+                        echo $pseudo;
+                    ?>
+                </p>
             </nav>
         </header>
 
